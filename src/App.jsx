@@ -12,8 +12,9 @@ import RevisionDashboard from './components/RevisionDashboard'
 import Simulations from './components/Simulations'
 import SolvedExamples from './components/SolvedExamples'
 import VisualBanks from './components/VisualBanks'
+import ThreeDLab from './components/ThreeDLab'
 
-const navItems = [['home','Home'],['chapter-map','Map'],['concept-notes','Notes'],['formula-sheet','Formula'],['derivations','Derive'],['visual-bank','Visuals'],['simulations','Sim'],['solved-examples','Solved'],['practice','Practice'],['revision','Revise'],['printable','Print']]
+const navItems = [['home','Home'],['chapter-map','Map'],['concept-notes','Notes'],['formula-sheet','Formula'],['derivations','Derive'],['visual-bank','Visuals'],['models-3d','3D Lab'],['simulations','Sim'],['solved-examples','Solved'],['practice','Practice'],['revision','Revise'],['printable','Print']]
 
 export default function App() {
   const [dark, setDark] = useState(() => localStorage.getItem(siteConfig.repo + '-theme') === 'dark')
@@ -45,7 +46,7 @@ export default function App() {
         </nav>
         {menuOpen && <div className="mx-auto mt-2 grid max-w-7xl grid-cols-2 gap-2 rounded-[20px] border border-white/70 bg-white/95 p-3 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/95 sm:grid-cols-3 xl:hidden">{navItems.map(([id,label]) => <a onClick={() => setMenuOpen(false)} key={id} href={'#'+id} className={'nav-link py-3 ' + (active === id ? 'active' : '')}>{label}</a>)}</div>}
       </header>
-      <main><ChapterHero /><ChapterMap /><ChapterNotebook /><FormulaSheet /><DerivationBank /><VisualBanks /><Simulations /><SolvedExamples /><PracticeZone /><RevisionDashboard /><PrintableSheet /></main>
+      <main><ChapterHero /><ChapterMap /><ChapterNotebook /><FormulaSheet /><DerivationBank /><VisualBanks /><ThreeDLab /><Simulations /><SolvedExamples /><PracticeZone /><RevisionDashboard /><PrintableSheet /></main>
       <Footer />
     </div>
   )
